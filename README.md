@@ -7,4 +7,5 @@ To offer a unix class on Hipergator, open a [support ticket](https://www.rc.ufl.
 - Students with existing Research Computing accounts will not have new accounts created for them.
 - The shared workshop folder is: /ufrc/hsc_lib_workshop.  When a new workshop is created, it is added to your id.  Type `id` to view it.
 - Use MobaXterm (Portable edition) for unix access -- Download [here](https://mobaxterm.mobatek.net/download-home-edition.html).
+- Space Invaders is available on MobaXterm...
 
