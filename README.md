@@ -6,5 +6,5 @@ To offer a unix class on Hipergator, open a support ticket at https://www.rc.ufl
 - Tell students that their Hipergator accounts will be wiped so all workshop-related materials need to be moved to a safe location.
 - Students with existing Research Computing accounts will not have new accounts created for them.
 - The shared workshop folder is: /ufrc/hsc_lib_workshop.  When a new workshop is created, it is added to your id.  Type `id` to view it.
-- Use Mobaxterm (Portable edition) for unix access -- Download [here](https://mobaxterm.mobatek.net/download-home-edition.html).
+- Use MobaXterm (Portable edition) for unix access -- Download [here](https://mobaxterm.mobatek.net/download-home-edition.html).
 
