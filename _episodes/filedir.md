@@ -45,12 +45,10 @@ a command is important. `pwd` shows you where you are:
 ~~~
 $ pwd
 ~~~
-{: .language-bash}
 
 ~~~
 /Users/nelle
 ~~~
-{: .output}
 
 Here,
 the computer's response is `/Users/nelle`,
