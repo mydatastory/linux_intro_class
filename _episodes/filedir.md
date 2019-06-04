@@ -397,13 +397,18 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > as file permissions and ownership), but the rest should be useful
 > nevertheless.
 >
-> > ## Solution
-> > The `-l` option makes `ls` use a **l**ong listing format, showing not only
-> > the file/directory names but also additional information such as the file size
-> > and the time of its last modification. If you use both the `-h` option and the `-l` option,
-> > this makes the file size "**h**uman readable", i.e. displaying something like `5.3K`
-> > instead of `5369`.
-
+> <details><summary>Solution</summary>
+> <p>
+>
+> The `-l` option makes `ls` use a **l**ong listing format, showing not only
+> the file/directory names but also additional information such as the file size
+> and the time of its last modification. If you use both the `-h` option and the `-l` option,
+> this makes the file size "**h**uman readable", i.e. displaying something like `5.3K`
+> instead of `5369`.
+> 
+> </p>
+> </details>
+>
 > ## Listing Recursively and By Time
 >
 > The command `ls -R` lists the contents of directories recursively, i.e., lists
