@@ -199,6 +199,7 @@ draft.txt
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 > 1.  The `touch` command generates a new file called `my_file.txt` in
 >     your current directory.  You can observe this newly generated file 
 >     by typing `ls` at the command line prompt.  `my_file.txt` can also 
