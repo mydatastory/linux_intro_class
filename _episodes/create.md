@@ -333,6 +333,7 @@ quotes.txt
 > ~~~
 > <details><summary>Solution</summary>
 > <p>
+>
 > ```
 > $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
 > ```
@@ -396,6 +397,7 @@ quotations.txt
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 > 1. No.  While this would create a file with the correct name, the incorrectly named file still exists in the directory
 > and would need to be deleted.
 > 2. Yes, this would work to rename the file.
@@ -440,6 +442,7 @@ quotations.txt
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 > We start in the `/Users/jamie/data` directory, and create a new folder called `recombine`.
 > The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombine`).
 > The third line makes a copy of the file we just moved.  The tricky part here is where the file was
@@ -492,6 +495,7 @@ ls: cannot access 'quotes.txt': No such file or directory
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 > ```
 > $ rm: remove regular file 'thesis_backup/quotations.txt'? y
 > ```
