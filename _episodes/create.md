@@ -613,6 +613,7 @@ Oftentimes one needs to copy or move several files at once. This can be done by 
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 >  The solution is `3.`
 >
 > `1.` shows all files whose names contain zero or more characters (`*`) followed by the letter `t`, then zero or more characters (`*`) followed by `ane.pdb`. This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`. 
@@ -710,12 +711,16 @@ Oftentimes one needs to copy or move several files at once. This can be done by 
 >         └── 2015-11-23-dataset_overview.txt
 > ```
 >
-> > ## Solution
-> > ```
-> > $ cp *calibration.txt backup/calibration
-> > $ cp 2015-11-* send_to_bob/all_november_files/
-> > $ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
-> > ```
+> <details><summary>Solution</summary>
+> <p>
+> 
+> ```
+> $ cp *calibration.txt backup/calibration
+> $ cp 2015-11-* send_to_bob/all_november_files/
+> $ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
+> ```
+> </p>
+> </details>
 
 > ## Organizing Directories and Files
 >
@@ -750,13 +755,17 @@ Oftentimes one needs to copy or move several files at once. This can be done by 
 > fructose.dat    sucrose.dat
 > ~~~
 >
-> > ## Solution
-> > ```
-> > mv *.dat analyzed
-> > ```
-> > Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
-> > The shell will expand *.dat to match all .dat files in the current directory.
-> > The `mv` command then moves the list of .dat files to the "analyzed" directory.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> ```
+> mv *.dat analyzed
+> ```
+> Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
+> The shell will expand *.dat to match all .dat files in the current directory.
+> The `mv` command then moves the list of .dat files to the "analyzed" directory.
+> </p>
+> </details>
 
 > ## Reproduce a folder structure
 >
@@ -804,14 +813,17 @@ Oftentimes one needs to copy or move several files at once. This can be done by 
 > $ mkdir raw processed
 > ~~~
 > 
-> >
-> > ## Solution
-> > The first two sets of commands achieve this objective.
-> > The first set uses relative paths to create the top level directory before
-> > the subdirectories.
-> >
-> > The third set of commands will give an error because `mkdir` won't create a subdirectory
-> > of a non-existant directory: the intermediate level folders must be created first.
-> > 
-> > The final set of commands generates the 'raw' and 'processed' directories at the same level
-> > as the 'data' directory.
+> <details><summary>Solution</summary>
+> <p>
+>
+> The first two sets of commands achieve this objective.
+> The first set uses relative paths to create the top level directory before
+> the subdirectories.
+>
+> The third set of commands will give an error because `mkdir` won't create a subdirectory
+> of a non-existant directory: the intermediate level folders must be created first.
+> 
+> The final set of commands generates the 'raw' and 'processed' directories at the same level
+> as the 'data' directory.
+> </p>
+> </details>
