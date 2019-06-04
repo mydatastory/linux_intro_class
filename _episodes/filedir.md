@@ -25,15 +25,13 @@ keypoints:
 - "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
 ---
 
-## collapsible markdown?
-
-<details><summary>ANSWER</summary>
-<p>
-
-#### yes, even hidden code blocks!
-
-</p>
-</details>
+> <details><summary>ANSWER</summary>
+> <p>
+>
+> #### yes, even hidden code blocks!
+> 
+> </p>
+> </details>
 
 The part of the operating system responsible for managing files and directories
 is called the **file system**.
