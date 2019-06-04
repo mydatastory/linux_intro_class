@@ -111,7 +111,7 @@ Underneath `/Users`,
 we find one directory for each user with an account on Nelle's machine,
 her colleagues *imhotep* and *larry*.
 
-![Home Directories](../fig/home-directories.svg)
+![Home Directories](../fig/home_directories.svg)
 
 The user *imhotep*'s files are stored in `/Users/imhotep`,
 user *larry*'s in `/Users/larry`,
