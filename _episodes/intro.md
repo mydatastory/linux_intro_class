@@ -74,26 +74,22 @@ indicating that the shell is waiting for input.
 ~~~
 $
 ~~~
-{: .language-bash}
 
 The shell typically uses `$ ` as the prompt, but may use a different symbol.
 In the examples for this lesson, we'll show the prompt as `$ `.
-Most importantly:
-when typing commands, either from these lessons or from other sources,
-*do not type the prompt*, only the commands that follow it.
+Most importantly: when typing commands, either from these lessons or from other 
+sources, *do not type the prompt*, only the commands that follow it.
 
 So let's try our first command, which will list the contents of the current directory:
 
 ~~~
 $ ls
 ~~~
-{: .language-bash}
 
 ~~~
 Desktop     Downloads   Movies      Pictures
 Documents   Library     Music       Public
 ~~~
-{: .output}
 
 > ## Command not found
 > If the shell can't find a program whose name is the command you typed, it
@@ -102,14 +98,12 @@ Documents   Library     Music       Public
 > ~~~
 > $ ks
 > ~~~
-> {: .language-bash}
+> 
 > ~~~
 > ks: command not found
 > ~~~
-> {: .output}
 >
 > Usually this means that you have mis-typed the command.
-{: .callout}
 
 ### Is it difficult?
 
