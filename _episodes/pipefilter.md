@@ -34,13 +34,11 @@ a simple text format that specifies the type and position of each atom in the mo
 ~~~
 $ ls molecules
 ~~~
-{: .language-bash}
 
 ~~~
 cubane.pdb    ethane.pdb    methane.pdb
 octane.pdb    pentane.pdb   propane.pdb
 ~~~
-{: .output}
 
 Let's go into that directory with `cd` and run the command `wc *.pdb`.
 `wc` is the "word count" command:
@@ -53,7 +51,6 @@ so the shell turns `*.pdb` into a list of all `.pdb` files in the current direct
 $ cd molecules
 $ wc *.pdb
 ~~~
-{: .language-bash}
 
 ~~~
   20  156  1158  cubane.pdb
@@ -64,9 +61,6 @@ $ wc *.pdb
   15  111  825   propane.pdb
  107  819  6081  total
 ~~~
-{: .output}
-
-
 
 If we run `wc -l` instead of just `wc`,
 the output shows only the number of lines per file:
@@ -74,7 +68,6 @@ the output shows only the number of lines per file:
 ~~~
 $ wc -l *.pdb
 ~~~
-{: .language-bash}
 
 ~~~
   20  cubane.pdb
@@ -85,7 +78,6 @@ $ wc -l *.pdb
   15  propane.pdb
  107  total
 ~~~
-{: .output}
 
 > ## Why Isn't It Doing Anything?
 >
@@ -95,7 +87,6 @@ $ wc -l *.pdb
 > ~~~
 > $ wc -l
 > ~~~
-> {: .language-bash}
 >
 > but don't type `*.pdb` (or anything else) after the command? 
 > Since it doesn't have any filenames, `wc` assumes it is supposed to
@@ -106,7 +97,6 @@ $ wc -l *.pdb
 > If you make this kind of mistake, you can escape out of this state by holding down 
 > the control key (<kbd>Ctrl</kbd>) and typing the letter <kbd>C</kbd> once and letting go of the <kbd>Ctrl</kbd> key.
 > <kbd>Ctrl</kbd>+<kbd>C</kbd>
-{: .callout}
 
 We can also use `-w` to get only the number of words,
 or `-c` to get only the number of characters.
@@ -119,7 +109,6 @@ Our first step toward a solution is to run the command:
 ~~~
 $ wc -l *.pdb > lengths.txt
 ~~~
-{: .language-bash}
 
 The greater than symbol, `>`, tells the shell to **redirect** the command's output
 to a file instead of printing it to the screen. (This is why there is no screen output:
@@ -127,18 +116,15 @@ everything that `wc` would have printed has gone into the
 file `lengths.txt` instead.)  The shell will create
 the file if it doesn't exist. If the file exists, it will be
 silently overwritten, which may lead to data loss and thus requires
-some caution.
-`ls lengths.txt` confirms that the file exists:
+some caution. `ls lengths.txt` confirms that the file exists:
 
 ~~~
 $ ls lengths.txt
 ~~~
-{: .language-bash}
 
 ~~~
 lengths.txt
 ~~~
-{: .output}
 
 We can now send the content of `lengths.txt` to the screen using `cat lengths.txt`.
 `cat` stands for "concatenate":
@@ -149,7 +135,6 @@ so `cat` just shows us what it contains:
 ~~~
 $ cat lengths.txt
 ~~~
-{: .language-bash}
 
 ~~~
   20  cubane.pdb
@@ -160,7 +145,6 @@ $ cat lengths.txt
   15  propane.pdb
  107  total
 ~~~
-{: .output}
 
 > ## Output Page by Page
 >
@@ -171,7 +155,6 @@ $ cat lengths.txt
 > This displays a screenful of the file, and then stops.
 > You can go forward one screenful by pressing the spacebar,
 > or back one by pressing `b`.  Press `q` to quit.
-{: .callout}
 
 Now let's use the `sort` command to sort its contents.
 
@@ -186,7 +169,6 @@ Now let's use the `sort` command to sort its contents.
 > 22
 > 6
 > ~~~
-> {: .source}
 >
 > the output is:
 >
@@ -197,7 +179,6 @@ Now let's use the `sort` command to sort its contents.
 > 22
 > 6
 > ~~~
-> {: .output}
 >
 > If we run `sort -n` on the same input, we get this instead:
 >
@@ -208,14 +189,11 @@ Now let's use the `sort` command to sort its contents.
 > 19
 > 22
 > ~~~
-> {: .output}
 >
 > Explain why `-n` has this effect.
 >
 > > ## Solution
 > > The `-n` option specifies a numerical rather than an alphanumerical sort.
-> {: .solution}
-{: .challenge}
 
 We will also use the `-n` option to specify that the sort is
 numerical instead of alphanumerical.
@@ -225,7 +203,6 @@ instead, it sends the sorted result to the screen:
 ~~~
 $ sort -n lengths.txt
 ~~~
-{: .language-bash}
 
 ~~~
   9  methane.pdb
@@ -236,7 +213,6 @@ $ sort -n lengths.txt
  30  octane.pdb
 107  total
 ~~~
-{: .output}
 
 We can put the sorted list of lines in another temporary file called `sorted-lengths.txt`
 by putting `> sorted-lengths.txt` after the command,
@@ -248,12 +224,10 @@ we can run another command called `head` to get the first few lines in `sorted-l
 $ sort -n lengths.txt > sorted-lengths.txt
 $ head -n 1 sorted-lengths.txt
 ~~~
-{: .language-bash}
 
 ~~~
   9  methane.pdb
 ~~~
-{: .output}
 
 Using `-n 1` with `head` tells it that
 we only want the first line of the file;
@@ -271,12 +245,10 @@ the output of `head` must be the file with the fewest lines.
 > ~~~
 > $ sort -n lengths.txt > lengths.txt
 > ~~~
-> {: .language-bash}
 >
 > Doing something like this may give you
 > incorrect results and/or delete
 > the contents of `lengths.txt`.
-{: .callout}
 
 > ## What Does `>>` Mean?
 >
@@ -287,25 +259,22 @@ the output of `head` must be the file with the fewest lines.
 > ~~~
 > $ echo The echo command prints text
 > ~~~
-> {: .language-bash}
+> 
 > ~~~
 > The echo command prints text
 > ~~~
-> {: .output}
 >
 > Now test the commands below to reveal the difference between the two operators:
 >
 > ~~~
 > $ echo hello > testfile01.txt
 > ~~~
-> {: .language-bash}
 >
 > and:
 >
 > ~~~
 > $ echo hello >> testfile02.txt
 > ~~~
-> {: .language-bash}
 >
 > Hint: Try executing each command twice in a row and then examining the output files.
 >
@@ -316,8 +285,6 @@ the output of `head` must be the file with the fewest lines.
 > > We see from the second example that the `>>` operator also writes "hello" to a file
 > > (in this case`testfile02.txt`),
 > > but appends the string to the file if it already exists (i.e. when we run it for the second time).
-> {: .solution}
-{: .challenge}
 
 > ## Appending Data
 >
@@ -332,7 +299,6 @@ the output of `head` must be the file with the fewest lines.
 > $ head -n 3 animals.txt > animals-subset.txt
 > $ tail -n 2 animals.txt >> animals-subset.txt
 > ~~~
-> {: .language-bash}
 >
 > 1. The first three lines of `animals.txt`
 > 2. The last two lines of `animals.txt`
@@ -344,8 +310,6 @@ the output of `head` must be the file with the fewest lines.
 > > For option 1 to be correct we would only run the `head` command.
 > > For option 2 to be correct we would only run the `tail` command.
 > > For option 4 to be correct we would have to pipe the output of `head` into `tail -n 2` by doing `head -n 3 animals.txt | tail -n 2 > animals-subset.txt`
-> {: .solution}
-{: .challenge}
 
 If you think this is confusing,
 you're in good company:
@@ -356,12 +320,10 @@ We can make it easier to understand by running `sort` and `head` together:
 ~~~
 $ sort -n lengths.txt | head -n 1
 ~~~
-{: .language-bash}
 
 ~~~
   9  methane.pdb
 ~~~
-{: .output}
 
 The vertical bar, `|`, between the two commands is called a **pipe**.
 It tells the shell that we want to use
@@ -380,7 +342,6 @@ Thus we first use a pipe to send the output of `wc` to `sort`:
 ~~~
 $ wc -l *.pdb | sort -n
 ~~~
-{: .language-bash}
 
 ~~~
    9 methane.pdb
@@ -391,19 +352,16 @@ $ wc -l *.pdb | sort -n
   30 octane.pdb
  107 total
 ~~~
-{: .output}
 
 And now we send the output of this pipe, through another pipe, to `head`, so that the full pipeline becomes:
 
 ~~~
 $ wc -l *.pdb | sort -n | head -n 1
 ~~~
-{: .language-bash}
 
 ~~~
    9  methane.pdb
 ~~~
-{: .output}
 
 This is exactly like a mathematician nesting functions like *log(3x)*
 and saying "the log of three times *x*".
@@ -426,8 +384,6 @@ the calculation is "head of sort of line count of `*.pdb`".
 > > the standard input of another.
 > > `>` is used to redirect standard output to a file.
 > > Try it in the `data-shell/molecules` directory!
-> {: .solution}
-{: .challenge}
 
 Here's what actually happens behind the scenes when we create a pipe.
 When a computer runs a program --- any program --- it creates a **process**
@@ -469,7 +425,7 @@ we get three processes with data flowing from the files,
 through `wc` to `sort`,
 and from `sort` through `head` to the screen.
 
-![Redirects and Pipes](../fig/redirects-and-pipes.png)
+![Redirects and Pipes](../fig/redirects_and_pipes.png)
 
 This simple idea is why Unix has been so successful.
 Instead of creating enormous programs that try to do many different things,
@@ -491,7 +447,6 @@ can be combined with every other program that behaves this way as well.
 You can *and should* write your programs this way
 so that you and other people can put those programs into pipes to multiply their power.
 
-
 > ## Why Does `uniq` Only Remove Adjacent Duplicates?
 >
 > The command `uniq` removes adjacent duplicated lines from its input.
@@ -505,7 +460,6 @@ so that you and other people can put those programs into pipes to multiply their
 > steelhead
 > steelhead
 > ~~~
-> {: .source}
 >
 > Running the command `uniq salmon.txt` from the `data-shell/data` directory produces:
 >
@@ -515,7 +469,6 @@ so that you and other people can put those programs into pipes to multiply their
 > coho
 > steelhead
 > ~~~
-> {: .output}
 >
 > Why do you think `uniq` only removes *adjacent* duplicated lines?
 > (Hint: think about very large data sets.) What other command could
@@ -525,9 +478,6 @@ so that you and other people can put those programs into pipes to multiply their
 > > ```
 > > $ sort salmon.txt | uniq
 > > ```
-> > {: .language-bash}
-> {: .solution}
-{: .challenge}
 
 > ## Pipe Reading Comprehension
 >
@@ -543,14 +493,12 @@ so that you and other people can put those programs into pipes to multiply their
 > 2012-11-07,rabbit
 > 2012-11-07,bear
 > ~~~
-> {: .source}
 >
 > What text passes through each of the pipes and the final redirect in the pipeline below?
 >
 > ~~~
 > $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 > ~~~
-> {: .language-bash}
 > Hint: build the pipeline up one command at a time to test your understanding
 > > ## Solution
 > > The `head` command extracts the first 5 lines from `animals.txt`.
@@ -564,10 +512,6 @@ so that you and other people can put those programs into pipes to multiply their
 > > 2012-11-06,deer
 > > 2012-11-05,raccoon
 > > ```
-> > {: .source}
-> {: .solution}
-{: .challenge}
-
 > ## Pipe Construction
 >
 > For the file `animals.txt` from the previous exercise, consider the following command:
@@ -575,7 +519,6 @@ so that you and other people can put those programs into pipes to multiply their
 > ~~~
 > $ cut -d , -f 2 animals.txt
 > ~~~
-> {: .language-bash}
 >
 > The `cut` command is used to remove or "cut out" certain sections of each line in the file. The optional `-d` flag is used to define the delimiter. The default delimiter is <kbd>Tab</kbd>. The `-f` flag is used to specify the field (column) to cut out.
 > The command above uses the `-d` option to split each line by comma, and the `-f` option
@@ -591,7 +534,6 @@ so that you and other people can put those programs into pipes to multiply their
 > rabbit
 > bear
 > ~~~
-> {: .output}
 >
 > What other command(s) could be added to this in a pipeline to find
 > out what animals the file contains (without any duplicates in their
@@ -602,8 +544,6 @@ so that you and other people can put those programs into pipes to multiply their
 > > $ cut -d , -f 2 animals.txt | sort | uniq
 > > ```
 > > {: .language-bash}
-> {: .solution}
-{: .challenge}
 
 > ## Which Pipe?
 >
@@ -616,7 +556,6 @@ so that you and other people can put those programs into pipes to multiply their
 > 2012-11-06,rabbit
 > ...
 > ~~~
-> {: .output}
 >
 > Assuming your current directory is `data-shell/data/`,
 > what command would you use to produce a table that shows
@@ -633,8 +572,6 @@ so that you and other people can put those programs into pipes to multiply their
 > > Option 5. is the correct answer.
 > > If you have difficulty understanding why, try running the commands, or sub-sections of
 > > the pipelines (make sure you are in the `data-shell/data` directory).
-> {: .solution}
-{: .challenge}
 
 ## Nelle's Pipeline: Checking Files
 
@@ -646,7 +583,6 @@ As a quick sanity check, starting from her home directory, Nelle types:
 $ cd north-pacific-gyre/2012-07-03
 $ wc -l *.txt
 ~~~
-{: .language-bash}
 
 The output is 18 lines that look like this:
 
@@ -659,14 +595,12 @@ The output is 18 lines that look like this:
 300 NENE01812A.txt
 ... ...
 ~~~
-{: .output}
 
 Now she types this:
 
 ~~~
 $ wc -l *.txt | sort -n | head -n 5
 ~~~
-{: .language-bash}
 
 ~~~
  240 NENE02018B.txt
@@ -675,7 +609,6 @@ $ wc -l *.txt | sort -n | head -n 5
  300 NENE01736A.txt
  300 NENE01751A.txt
 ~~~
-{: .output}
 
 Whoops: one of the files is 60 lines shorter than the others.
 When she goes back and checks it,
@@ -688,7 +621,6 @@ she checks to see if any files have too much data:
 ~~~
 $ wc -l *.txt | sort -n | tail -n 5
 ~~~
-{: .language-bash}
 
 ~~~
  300 NENE02040B.txt
@@ -697,7 +629,6 @@ $ wc -l *.txt | sort -n | tail -n 5
  300 NENE02043B.txt
 5040 total
 ~~~
-{: .output}
 
 Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
 All of her samples should be marked 'A' or 'B';
@@ -708,12 +639,10 @@ To find others like it, she does this:
 ~~~
 $ ls *Z.txt
 ~~~
-{: .language-bash}
 
 ~~~
 NENE01971Z.txt    NENE02040Z.txt
 ~~~
-{: .output}
 
 Sure enough,
 when she checks the log on her laptop,
@@ -759,8 +688,6 @@ so this matches all the valid data files she has.
 > > 2. The output from the new commands is separated because there are two commands.
 > > 3. When there are no files ending in `A.txt`, or there are no files ending in
 > > `B.txt`.
-> {: .solution}
-{: .challenge}
 
 > ## Removing Unneeded Files
 >
@@ -783,5 +710,3 @@ so this matches all the valid data files she has.
 > > file called `.txt`
 > > 4. The shell would expand `*.*` to match all files with any extension,
 > > so this command would delete all files
-> {: .solution}
-{: .challenge}
