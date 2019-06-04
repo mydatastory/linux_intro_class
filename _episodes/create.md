@@ -101,7 +101,6 @@ creatures/  data/  molecules/  north-pacific-gyre/  notes.txt  pizza.cfg  solar.
 >
 > If you need to refer to names of files or directories that have spaces
 > or other special characters, you should surround the name in quotes (`""`).
-{: .callout}
 
 Since we've just created the `thesis` directory, there's nothing in it yet:
 
@@ -198,23 +197,26 @@ draft.txt
 >
 > 3.  When might you want to create a file this way?
 >
-> > ## Solution
-> > 1.  The `touch` command generates a new file called `my_file.txt` in
-> >     your current directory.  You
-> >     can observe this newly generated file by typing `ls` at the 
-> >     command line prompt.  `my_file.txt` can also be viewed in your
-> >     GUI file explorer.
-> >
-> > 2.  When you inspect the file with `ls -l`, note that the size of
-> >     `my_file.txt` is 0 bytes.  In other words, it contains no data.
-> >     If you open `my_file.txt` using your text editor it is blank.
-> >
-> > 3.  Some programs do not generate output files themselves, but
-> >     instead require that empty files have already been generated.
-> >     When the program is run, it searches for an existing file to
-> >     populate with its output.  The touch command allows you to
-> >     efficiently generate a blank text file to be used by such
-> >     programs.
+> <details><summary>Solution</summary>
+> <p>
+> 1.  The `touch` command generates a new file called `my_file.txt` in
+>     your current directory.  You
+>     can observe this newly generated file by typing `ls` at the 
+>     command line prompt.  `my_file.txt` can also be viewed in your
+>     GUI file explorer.
+>
+> 2.  When you inspect the file with `ls -l`, note that the size of
+>     `my_file.txt` is 0 bytes.  In other words, it contains no data.
+>     If you open `my_file.txt` using your text editor it is blank.
+>
+> 3.  Some programs do not generate output files themselves, but
+>     instead require that empty files have already been generated.
+>     When the program is run, it searches for an existing file to
+>     populate with its output.  The touch command allows you to
+>     efficiently generate a blank text file to be used by such
+>     programs.
+> </p>
+> </details>
 
 > ## What's In A Name?
 >
@@ -329,13 +331,16 @@ quotes.txt
 > ~~~
 > $ mv ___/sucrose.dat  ___/maltose.dat ___
 > ~~~
-> > ## Solution
-> > ```
-> > $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
-> > ```
-> > {: .language-bash}
-> > Recall that `..` refers to the parent directory (i.e. one above the current directory)
-> > and that `.` refers to the current directory.
+> <details><summary>Solution</summary>
+> <p>
+> ```
+> $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
+> ```
+> 
+> Recall that `..` refers to the parent directory (i.e. one above the current directory)
+> and that `.` refers to the current directory.
+> </p>
+> </details>
 
 ## Copying files and directories
 
@@ -389,14 +394,17 @@ quotations.txt
 > 3. `mv statstics.txt .`
 > 4. `cp statstics.txt .`
 >
-> > ## Solution
-> > 1. No.  While this would create a file with the correct name, the incorrectly named file still exists in the directory
-> > and would need to be deleted.
-> > 2. Yes, this would work to rename the file.
-> > 3. No, the period(.) indicates where to move the file, but does not provide a new file name; identical file names
-> > cannot be created.
-> > 4. No, the period(.) indicates where to copy the file, but does not provide a new file name; identical file names
-> > cannot be created.
+> <details><summary>Solution</summary>
+> <p>
+> 1. No.  While this would create a file with the correct name, the incorrectly named file still exists in the directory
+> and would need to be deleted.
+> 2. Yes, this would work to rename the file.
+> 3. No, the period(.) indicates where to move the file, but does not provide a new file name; identical file names
+> cannot be created.
+> 4. No, the period(.) indicates where to copy the file, but does not provide a new file name; identical file names
+> cannot be created.
+> </p>
+> </details>
 
 > ## Moving and Copying
 >
@@ -430,19 +438,22 @@ quotations.txt
 > 3.   `proteins.dat recombine`
 > 4.   `proteins-saved.dat`
 >
-> > ## Solution
-> > We start in the `/Users/jamie/data` directory, and create a new folder called `recombine`.
-> > The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombine`).
-> > The third line makes a copy of the file we just moved.  The tricky part here is where the file was
-> > copied to.  Recall that `..` means "go up a level", so the copied file is now in `/Users/jamie`.
-> > Notice that `..` is interpreted with respect to the current working
-> > directory, **not** with respect to the location of the file being copied.
-> > So, the only thing that will show using ls (in `/Users/jamie/data`) is the recombine folder.
-> >
-> > 1. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
-> > 2. Yes
-> > 3. No, see explanation above.  `proteins.dat` is located at `/Users/jamie/data/recombine`
-> > 4. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
+> <details><summary>Solution</summary>
+> <p>
+> We start in the `/Users/jamie/data` directory, and create a new folder called `recombine`.
+> The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombine`).
+> The third line makes a copy of the file we just moved.  The tricky part here is where the file was
+> copied to.  Recall that `..` means "go up a level", so the copied file is now in `/Users/jamie`.
+> Notice that `..` is interpreted with respect to the current working
+> directory, **not** with respect to the location of the file being copied.
+> So, the only thing that will show using ls (in `/Users/jamie/data`) is the recombine folder.
+>
+> 1. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
+> 2. Yes
+> 3. No, see explanation above.  `proteins.dat` is located at `/Users/jamie/data/recombine`
+> 4. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
+> </p>
+> </details>
 
 ## Removing files and directories
 
@@ -479,14 +490,16 @@ ls: cannot access 'quotes.txt': No such file or directory
 > What happens when we execute `rm -i thesis_backup/quotations.txt`?
 > Why would we want this protection when using `rm`?
 >
-> > ## Solution
-> > ```
-> > $ rm: remove regular file 'thesis_backup/quotations.txt'? y
-> > ```
-> > The `-i` option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion or <kbd>N</kbd> to keep the file).
-> > The Unix shell doesn't have a trash bin, so all the files removed will disappear forever.
-> > By using the `-i` option, we have the chance to check that we are deleting only the files that we want to remove.
-
+> <details><summary>Solution</summary>
+> <p>
+> ```
+> $ rm: remove regular file 'thesis_backup/quotations.txt'? y
+> ```
+> The `-i` option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion or <kbd>N</kbd> to keep the file).
+> The Unix shell doesn't have a trash bin, so all the files removed will disappear forever.
+> By using the `-i` option, we have the chance to check that we are deleting only the files that we want to remove.
+> </p>
+> </details>
 
 If we try to remove the `thesis` directory using `rm thesis`,
 we get an error message:
@@ -594,16 +607,19 @@ Oftentimes one needs to copy or move several files at once. This can be done by 
 > 3. `ls *t??ne.pdb`
 > 4. `ls ethane.*`
 >
-> > ## Solution
->>  The solution is `3.`
->>
->> `1.` shows all files whose names contain zero or more characters (`*`) followed by the letter `t`, then zero or more characters (`*`) followed by `ane.pdb`. This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`. 
->>
->> `2.` shows all files whose names start with zero or more characters (`*`) followed by the letter `t`, then a single character (`?`), then `ne.` followed by zero or more characters (`*`). This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything which ends in `thane.pdb`.
->>
->> `3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`. This is the solution.
->>
->> `4.` only shows files starting with `ethane.`.
+> <details><summary>Solution</summary>
+> <p>
+>  The solution is `3.`
+>
+> `1.` shows all files whose names contain zero or more characters (`*`) followed by the letter `t`, then zero or more characters (`*`) followed by `ane.pdb`. This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`. 
+>
+> `2.` shows all files whose names start with zero or more characters (`*`) followed by the letter `t`, then a single character (`?`), then `ne.` followed by zero or more characters (`*`). This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything which ends in `thane.pdb`.
+>
+> `3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`. This is the solution.
+>
+> `4.` only shows files starting with `ethane.`.
+> </p>
+> </details>
 
 > ## More on Wildcards
 >
