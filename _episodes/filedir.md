@@ -25,14 +25,6 @@ keypoints:
 - "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
 ---
 
-> <details><summary>ANSWER</summary>
-> <p>
->
-> #### yes, even hidden code blocks!
-> 
-> </p>
-> </details>
-
 The part of the operating system responsible for managing files and directories
 is called the **file system**.
 It organizes our data into files,
@@ -418,8 +410,13 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 > In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
 > format to view timestamps.
 >
-> > ## Solution
-> > The files/directories in each directory are sorted by time of last change.
+> <details><summary>Solution</summary>
+> <p>
+>
+> The files/directories in each directory are sorted by time of last change.
+> 
+> </p>
+> </details>
 
 We can also use `ls` to see the contents of a different directory.  Let's take a
 look at our `Desktop` directory by running `ls -F Desktop`,
@@ -689,16 +686,19 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > 8. `cd`
 > 9. `cd ..`
 >
-> > ## Solution
-> > 1. No: `.` stands for the current directory.
-> > 2. No: `/` stands for the root directory.
-> > 3. No: Amanda's home directory is `/Users/amanda`.
-> > 4. No: this goes up two levels, i.e. ends in `/Users`.
-> > 5. Yes: `~` stands for the user's home directory, in this case `/Users/amanda`.
-> > 6. No: this would navigate into a directory `home` in the current directory if it exists.
-> > 7. Yes: unnecessarily complicated, but correct.
-> > 8. Yes: shortcut to go back to the user's home directory.
-> > 9. Yes: goes up one level.
+> <details><summary>Solution</summary>
+> <p>
+> 1. No: `.` stands for the current directory.
+> 2. No: `/` stands for the root directory.
+> 3. No: Amanda's home directory is `/Users/amanda`.
+> 4. No: this goes up two levels, i.e. ends in `/Users`.
+> 5. Yes: `~` stands for the user's home directory, in this case `/Users/amanda`.
+> 6. No: this would navigate into a directory `home` in the current directory if it exists.
+> 7. Yes: unnecessarily complicated, but correct.
+> 8. Yes: shortcut to go back to the user's home directory.
+> 9. Yes: goes up one level.
+> </p>
+> </details>
 
 > ## Relative Path Resolution
 >
@@ -712,13 +712,16 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 >
 > ![File System for Challenge Questions](../fig/filesystem-challenge.svg)
 >
-> > ## Solution
-> > 1. No: there *is* a directory `backup` in `/Users`.
-> > 2. No: this is the content of `Users/thing/backup`,
-> >    but with `..` we asked for one level further up.
-> > 3. No: see previous explanation.
-> > 4. Yes: `../backup/` refers to `/Users/backup/`.
-
+> <details><summary>Solution</summary>
+> <p>
+> 1. No: there *is* a directory `backup` in `/Users`.
+> 2. No: this is the content of `Users/thing/backup`,
+>    but with `..` we asked for one level further up.
+> 3. No: see previous explanation.
+> 4. Yes: `../backup/` refers to `/Users/backup/`.
+> </p>
+> </details>
+>
 > ## `ls` Reading Comprehension
 >
 > Using the filesystem diagram below,
@@ -736,11 +739,14 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > 2.  `ls -r -F`
 > 3.  `ls -r -F /Users/backup`
 >
-> > ## Solution
-> >  1. No: `pwd` is not the name of a directory.
-> >  2. Yes: `ls` without directory argument lists files and directories
-> >     in the current directory.
-> >  3. Yes: uses the absolute path explicitly.
+> <details><summary>Solution</summary>
+> <p>
+>  1. No: `pwd` is not the name of a directory.
+>  2. Yes: `ls` without directory argument lists files and directories
+>     in the current directory.
+>  3. Yes: uses the absolute path explicitly.
+> </p>
+> </details>
 
 ### Nelle's Pipeline: Organizing Files
 
