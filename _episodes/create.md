@@ -200,10 +200,9 @@ draft.txt
 > <details><summary>Solution</summary>
 > <p>
 > 1.  The `touch` command generates a new file called `my_file.txt` in
->     your current directory.  You
->     can observe this newly generated file by typing `ls` at the 
->     command line prompt.  `my_file.txt` can also be viewed in your
->     GUI file explorer.
+>     your current directory.  You can observe this newly generated file 
+>     by typing `ls` at the command line prompt.  `my_file.txt` can also 
+>     be viewed in your GUI file explorer.
 >
 > 2.  When you inspect the file with `ls -l`, note that the size of
 >     `my_file.txt` is 0 bytes.  In other words, it contains no data.
