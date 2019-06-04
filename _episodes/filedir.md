@@ -710,7 +710,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > 3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
 > 4.  `original/ pnas_final/ pnas_sub/`
 >
-> ![File System for Challenge Questions](../fig/filesystem-challenge.svg)
+> ![File System for Challenge Questions](../fig/filesystem_challenge.svg)
 >
 > <details><summary>Solution</summary>
 > <p>
@@ -733,7 +733,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > pnas_sub/ pnas_final/ original/
 > ~~~
 >
-> ![File System for Challenge Questions](../fig/filesystem-challenge.svg)
+> ![File System for Challenge Questions](../fig/filesystem_challenge.svg)
 >
 > 1.  `ls pwd`
 > 2.  `ls -r -F`
