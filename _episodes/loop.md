@@ -42,7 +42,6 @@ do
     operation_using $thing    # Indentation within the loop is not required, but aids legibility
 done
 ```
-{: .language-bash}
 
 and we can apply this to our example like this:
 
@@ -52,14 +51,11 @@ $ for filename in basilisk.dat unicorn.dat
 >    head -n 2 $filename | tail -n 1
 > done
 ```
-{: .language-bash}
 
 ```
 CLASSIFICATION: basiliscus vulgaris
 CLASSIFICATION: equus monoceros
 ```
-{: .output}
-
 
 > ## Follow the Prompt
 >
@@ -67,7 +63,6 @@ CLASSIFICATION: equus monoceros
 > typing in our loop. The second prompt, `>`, is different to remind
 > us that we haven't finished typing a complete command yet. A semicolon, `;`,
 > can be used to separate two commands written on a single line.
-{: .callout}
 
 When the shell sees the keyword `for`,
 it knows to repeat a command (or group of commands) once for each item in a list.
@@ -105,7 +100,6 @@ Since the list was only two items, the shell exits the `for` loop.
 >
 > If *you* type `>` or `$` yourself, it is an instruction from you that
 > the shell should redirect output or get the value of a variable.
-{: .callout}
 
 When using variables it is also
 possible to put the names into curly braces to clearly delimit the variable
@@ -123,7 +117,6 @@ $ for x in basilisk.dat unicorn.dat
 >    head -n 2 $x | tail -n 1
 > done
 ~~~
-{: .language-bash}
 
 or:
 
@@ -133,7 +126,6 @@ $ for temperature in basilisk.dat unicorn.dat
 >    head -n 2 $temperature | tail -n 1
 > done
 ~~~
-{: .language-bash}
 
 it would work exactly the same way.
 *Don't do this.*
@@ -149,7 +141,6 @@ increase the odds that the program won't do what its readers think it does.
 > ~~~
 > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 > ~~~
-> {: .output}
 >
 > What is the output of the following code?
 >
@@ -159,7 +150,6 @@ increase the odds that the program won't do what its readers think it does.
 > >    ls *.pdb
 > > done
 > ~~~
-> {: .language-bash}
 >
 > Now, what is the output of the following code?
 >
@@ -169,7 +159,6 @@ increase the odds that the program won't do what its readers think it does.
 > >	ls $datafile
 > > done
 > ~~~
-> {: .language-bash}
 >
 > Why do these two loops give different outputs?
 >
@@ -186,7 +175,6 @@ increase the odds that the program won't do what its readers think it does.
 > > >	ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 > > > done
 > > ```
-> > {: .language-bash}
 > >
 > > ```
 > > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -196,7 +184,6 @@ increase the odds that the program won't do what its readers think it does.
 > > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 > > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 > > ```
-> > {: .output}
 > >
 > > The second code block lists a different file on each loop iteration.
 > > The value of the `datafile` variable is evaluated using `$datafile`,
@@ -210,9 +197,6 @@ increase the odds that the program won't do what its readers think it does.
 > > pentane.pdb
 > > propane.pdb
 > > ```
-> > {: .output}
-> {: .solution}
-{: .challenge}
 
 > ## Limiting Sets of Files
 >
@@ -224,7 +208,6 @@ increase the odds that the program won't do what its readers think it does.
 > >    ls $filename
 > > done
 > ~~~
-> {: .language-bash}
 >
 > 1.  No files are listed.
 > 2.  All files are listed.
@@ -234,7 +217,6 @@ increase the odds that the program won't do what its readers think it does.
 > > ## Solution
 > > 4 is the correct answer. `*` matches zero or more characters, so any file name starting with
 > > the letter c, followed by zero or more other characters will be matched.
-> {: .solution}
 >
 > How would the output differ from using this command instead?
 >
@@ -244,7 +226,6 @@ increase the odds that the program won't do what its readers think it does.
 > >    ls $filename
 > > done
 > ~~~
-> {: .language-bash}
 >
 > 1.  The same files would be listed.
 > 2.  All the files are listed this time.
@@ -255,8 +236,6 @@ increase the odds that the program won't do what its readers think it does.
 > > ## Solution
 > > 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
 > > characters before a letter c and zero or more characters after the letter c will be matched.
-> {: .solution}
-{: .challenge}
 
 > ## Saving to a File in a Loop - Part One
 >
@@ -269,7 +248,6 @@ increase the odds that the program won't do what its readers think it does.
 >     cat $alkanes > alkanes.pdb
 > done
 > ~~~
-> {: .language-bash}
 >
 > 1.  Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` and `propane.pdb`,
 >     and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
@@ -283,8 +261,6 @@ increase the odds that the program won't do what its readers think it does.
 > > 1. The text from each file in turn gets written to the `alkanes.pdb` file.
 > > However, the file gets overwritten on each loop interation, so the final content of `alkanes.pdb`
 > > is the text from the `propane.pdb` file.
-> {: .solution}
-{: .challenge}
 
 > ## Saving to a File in a Loop - Part Two
 >
@@ -296,7 +272,6 @@ increase the odds that the program won't do what its readers think it does.
 >     cat $datafile >> all.pdb
 > done
 > ~~~
-> {: .language-bash}
 >
 > 1.  All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and
 >     `pentane.pdb` would be concatenated and saved to a file called `all.pdb`.
@@ -310,8 +285,6 @@ increase the odds that the program won't do what its readers think it does.
 > > 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
 > > output from a command.
 > > Given the output from the `cat` command has been redirected, nothing is printed to the screen.
-> {: .solution}
-{: .challenge}
 
 Let's continue with our example in the `data-shell/creatures` directory.
 Here's a slightly more complicated loop:
@@ -323,7 +296,6 @@ $ for filename in *.dat
 >     head -n 100 $filename | tail -n 20
 > done
 ~~~
-{: .language-bash}
 
 The shell starts by expanding `*.dat` to create the list of files it will process.
 The **loop body**
@@ -334,14 +306,12 @@ For example:
 ~~~
 $ echo hello there
 ~~~
-{: .language-bash}
 
 prints:
 
 ~~~
 hello there
 ~~~
-{: .output}
 
 In this case,
 since the shell expands `$filename` to be the name of a file,
@@ -355,7 +325,6 @@ $ for filename in *.dat
 >     head -n 100 $filename | tail -n 20
 > done
 ~~~
-{: .language-bash}
 
 because then the first time through the loop,
 when `$filename` expanded to `basilisk.dat`, the shell would try to run `basilisk.dat` as a program.
@@ -376,7 +345,6 @@ from whatever file is being processed
 > red dragon.dat
 > purple unicorn.dat
 > ~~~
-> {: .source}
 >
 > To loop over these files, we would need to add double quotes like so:
 >
@@ -386,7 +354,6 @@ from whatever file is being processed
 > >     head -n 100 "$filename" | tail -n 20
 > > done
 > ~~~
-> {: .language-bash}
 >
 > It is simpler just to avoid using spaces (or other special characters) in filenames.
 >
@@ -397,7 +364,6 @@ from whatever file is being processed
 > head: cannot open ‘red dragon.dat’ for reading: No such file or directory
 > head: cannot open ‘purple unicorn.dat’ for reading: No such file or directory
 > ```
-> {: .output}
 > Try removing the quotes around `$filename` in the loop above to see the effect of the quote
 > marks on spaces. Note that we get a result from the loop command for unicorn.dat when we run this code in the `creatures` directory:
 > ```
@@ -408,8 +374,6 @@ from whatever file is being processed
 > AAGGGTCGCG
 > CAAGTGTTCC
 > ```
-> {: . output}
-{: .callout}
 
 We would like to modify each of the files in `data-shell/creatures`, but also save a version
 of the original files, naming the copies `original-basilisk.dat` and `original-unicorn.dat`.
@@ -418,21 +382,18 @@ We can't use:
 ~~~
 $ cp *.dat original-*.dat
 ~~~
-{: .language-bash}
 
 because that would expand to:
 
 ~~~
 $ cp basilisk.dat unicorn.dat original-*.dat
 ~~~
-{: .language-bash}
 
 This wouldn't back up our files, instead we get an error:
 
 ~~~
 cp: target `original-*.dat' is not a directory
 ~~~
-{: .error}
 
 This problem arises when `cp` receives more than two inputs. When this happens, it
 expects the last input to be a directory where it can copy all the files it was passed.
@@ -446,7 +407,6 @@ $ for filename in *.dat
 >     cp $filename original-$filename
 > done
 ~~~
-{: .language-bash}
 
 This loop runs the `cp` command once for each filename.
 The first time,
@@ -456,14 +416,12 @@ the shell executes:
 ~~~
 cp basilisk.dat original-basilisk.dat
 ~~~
-{: .language-bash}
 
 The second time, the command is:
 
 ~~~
 cp unicorn.dat original-unicorn.dat
 ~~~
-{: .language-bash}
 
 Since the `cp` command does not normally produce any output, it's hard to check
 that the loop is doing the correct thing.
@@ -497,7 +455,6 @@ $ for datafile in NENE*[AB].txt
 >     echo $datafile
 > done
 ~~~
-{: .language-bash}
 
 ~~~
 NENE01729A.txt
@@ -507,7 +464,6 @@ NENE01736A.txt
 NENE02043A.txt
 NENE02043B.txt
 ~~~
-{: .output}
 
 Her next step is to decide
 what to call the files that the `goostats` analysis program will create.
@@ -520,7 +476,6 @@ $ for datafile in NENE*[AB].txt
 >     echo $datafile stats-$datafile
 > done
 ~~~
-{: .language-bash}
 
 ~~~
 NENE01729A.txt stats-NENE01729A.txt
@@ -530,24 +485,19 @@ NENE01736A.txt stats-NENE01736A.txt
 NENE02043A.txt stats-NENE02043A.txt
 NENE02043B.txt stats-NENE02043B.txt
 ~~~
-{: .output}
 
 She hasn't actually run `goostats` yet,
 but now she's sure she can select the right files and generate the right output filenames.
 
 Typing in commands over and over again is becoming tedious,
-though,
-and Nelle is worried about making mistakes,
-so instead of re-entering her loop,
-she presses the up arrow.
-In response,
-the shell redisplays the whole loop on one line
-(using semi-colons to separate the pieces):
+though, and Nelle is worried about making mistakes, so instead of 
+re-entering her loop, she presses the up arrow. In response,
+the shell redisplays the whole loop on one line (using semi-colons 
+to separate the pieces):
 
 ~~~
 $ for datafile in NENE*[AB].txt; do echo $datafile stats-$datafile; done
 ~~~
-{: .language-bash}
 
 Using the left arrow key,
 Nelle backs up and changes the command `echo` to `bash goostats`:
@@ -555,7 +505,6 @@ Nelle backs up and changes the command `echo` to `bash goostats`:
 ~~~
 $ for datafile in NENE*[AB].txt; do bash goostats $datafile stats-$datafile; done
 ~~~
-{: .language-bash}
 
 When she presses <kbd>Enter</kbd>,
 the shell runs the modified command.
@@ -569,13 +518,11 @@ and edits it to read:
 ~~~
 $ for datafile in NENE*[AB].txt; do echo $datafile; bash goostats $datafile stats-$datafile; done
 ~~~
-{: .language-bash}
 
 > ## Beginning and End
 >
 > We can move to the beginning of a line in the shell by typing `Ctrl-a`
 > and to the end using `Ctrl-e`.
-{: .callout}
 
 When she runs her program now,
 it produces one line of output every five seconds or so:
@@ -586,7 +533,6 @@ NENE01729B.txt
 NENE01736A.txt
 ...
 ~~~
-{: .output}
 
 1518 times 5 seconds,
 divided by 60,
@@ -609,7 +555,7 @@ so she decides to get some coffee and catch up on her reading.
 > ~~~
 > $ history | tail -n 5
 > ~~~
-> {: .language-bash}
+> 
 > ~~~
 >   456  ls -l NENE0*.txt
 >   457  rm stats-NENE01729B.txt.txt
@@ -617,11 +563,9 @@ so she decides to get some coffee and catch up on her reading.
 >   459  ls -l NENE0*.txt
 >   460  history
 > ~~~
-> {: .output}
 >
 > then she can re-run `goostats` on `NENE01729B.txt` simply by typing
 > `!458`.
-{: .callout}
 
 > ## Other History Commands
 >
@@ -637,7 +581,6 @@ so she decides to get some coffee and catch up on her reading.
 > `bash goostats NENE01729B.txt stats-NENE01729B.txt`, you can type
 > `less !$` to look at the file `stats-NENE01729B.txt`, which is
 > quicker than doing up-arrow and editing the command-line.
-{: .callout}
 
 > ## Doing a Dry Run
 >
@@ -654,7 +597,6 @@ so she decides to get some coffee and catch up on her reading.
 > >   analyze $file > analyzed-$file
 > > done
 > ~~~
-> {: .language-bash}
 >
 > What is the difference between the two loops below, and which one would we
 > want to run?
@@ -666,7 +608,6 @@ so she decides to get some coffee and catch up on her reading.
 > >   echo analyze $file > analyzed-$file
 > > done
 > ~~~
-> {: .language-bash}
 >
 > ~~~
 > # Version 2
@@ -675,7 +616,6 @@ so she decides to get some coffee and catch up on her reading.
 > >   echo "analyze $file > analyzed-$file"
 > > done
 > ~~~
-> {: .language-bash}
 >
 > > ## Solution
 > > The second version is the one we want to run.
@@ -688,8 +628,6 @@ so she decides to get some coffee and catch up on her reading.
 > >
 > > Try both versions for yourself to see the output! Be sure to open the
 > > `analyzed-*.pdb` files to view their contents.
-> {: .solution}
-{: .challenge}
 
 > ## Nested Loops
 >
@@ -707,7 +645,6 @@ so she decides to get some coffee and catch up on her reading.
 > >     done
 > > done
 > ~~~
-> {: .language-bash}
 >
 > > ## Solution
 > > We have a nested loop, i.e. contained within another loop, so for each species
@@ -715,5 +652,3 @@ so she decides to get some coffee and catch up on her reading.
 > > temperatures, and creates a new directory for each combination.
 > >
 > > Try running the code for yourself to see which directories are created!
-> {: .solution}
-{: .challenge}
