@@ -313,6 +313,7 @@ Miscellaneous:
 > ```
 > </p>
 > </details>
+>
 > ## Little Women
 >
 > You and your friend, having just finished reading *Little Women* by
@@ -461,8 +462,7 @@ $ find . -name haiku.txt
 To get what we want,
 let's do what we did with `grep`:
 put `*.txt` in single quotes to prevent the shell from expanding the `*` wildcard.
-This way,
-`find` actually gets the pattern `*.txt`, not the expanded filename `haiku.txt`:
+This way, `find` actually gets the pattern `*.txt`, not the expanded filename `haiku.txt`:
 
 ~~~
 $ find . -name '*.txt'
@@ -547,15 +547,19 @@ $ grep "FE" $(find .. -name '*.pdb')
 > 3.  `grep -v "temp" $(find data -name '*s.txt')`
 > 4.  None of the above.
 >
-> > ## Solution
-> > The correct answer is 1. Putting the match expression in quotes prevents the shell
-> > expanding it, so it gets passed to the `find` command.
-> >
-> > Option 2 is incorrect because the shell expands `*s.txt` instead of passing the wildcard
-> > expression to `find`.
-> >
-> > Option 3 is incorrect because it searches the contents of the files for lines which
-> > do not match "temp", rather than searching the file names.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> The correct answer is 1. Putting the match expression in quotes prevents the shell
+> expanding it, so it gets passed to the `find` command.
+>
+> Option 2 is incorrect because the shell expands `*s.txt` instead of passing the wildcard
+> expression to `find`.
+>
+> Option 3 is incorrect because it searches the contents of the files for lines which
+> do not match "temp", rather than searching the file names.
+> </p>
+> </details>
 
 > ## Binary Files
 >
