@@ -162,41 +162,45 @@ increase the odds that the program won't do what its readers think it does.
 >
 > Why do these two loops give different outputs?
 >
-> > ## Solution
-> > The first code block gives the same output on each iteration through
-> > the loop.
-> > Bash expands the wildcard `*.pdb` within the loop body (as well as
-> > before the loop starts) to match all files ending in `.pdb`
-> > and then lists them using `ls`.
-> > The expanded loop would look like this:
-> > ```
-> > $ for datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > > do
-> > >	ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > > done
-> > ```
-> >
-> > ```
-> > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-> > ```
-> >
-> > The second code block lists a different file on each loop iteration.
-> > The value of the `datafile` variable is evaluated using `$datafile`,
-> > and then listed using `ls`.
-> >
-> > ```
-> > cubane.pdb
-> > ethane.pdb
-> > methane.pdb
-> > octane.pdb
-> > pentane.pdb
-> > propane.pdb
-> > ```
+> <details><summary>Solution</summary>
+> <p>
+> 
+> The first code block gives the same output on each iteration through
+> the loop.
+> Bash expands the wildcard `*.pdb` within the loop body (as well as
+> before the loop starts) to match all files ending in `.pdb`
+> and then lists them using `ls`.
+> The expanded loop would look like this:
+> ```
+> $ for datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> do
+>	ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> done
+> ```
+>
+> ```
+> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+> ```
+>
+> The second code block lists a different file on each loop iteration.
+> The value of the `datafile` variable is evaluated using `$datafile`,
+> and then listed using `ls`.
+>
+> ```
+> cubane.pdb
+> ethane.pdb
+> methane.pdb
+> octane.pdb
+> pentane.pdb
+> propane.pdb
+> ```
+> </p>
+> </details>
 
 > ## Limiting Sets of Files
 >
@@ -233,9 +237,13 @@ increase the odds that the program won't do what its readers think it does.
 > 4.  The files `cubane.pdb` and `octane.pdb` will be listed.
 > 5.  Only the file `octane.pdb` will be listed.
 >
-> > ## Solution
-> > 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
-> > characters before a letter c and zero or more characters after the letter c will be matched.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
+> characters before a letter c and zero or more characters after the letter c will be matched.
+> </p>
+> </details>
 
 > ## Saving to a File in a Loop - Part One
 >
