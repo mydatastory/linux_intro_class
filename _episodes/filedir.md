@@ -715,6 +715,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 > 1. No: there *is* a directory `backup` in `/Users`.
 > 2. No: this is the content of `Users/thing/backup`,
 >    but with `..` we asked for one level further up.
@@ -742,6 +743,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 >  1. No: `pwd` is not the name of a directory.
 >  2. Yes: `ls` without directory argument lists files and directories
 >     in the current directory.
@@ -813,6 +815,5 @@ since it's the only possible completion.
 Pressing <kbd>Tab</kbd> again does nothing,
 since there are 19 possibilities;
 pressing <kbd>Tab</kbd> twice brings up a list of all the files,
-and so on.
-This is called **tab completion**,
+and so on.  This is called **tab completion**,
 and we will see it in many other tools as we go on.
