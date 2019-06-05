@@ -218,9 +218,13 @@ increase the odds that the program won't do what its readers think it does.
 > 3.  Only `cubane.pdb`, `octane.pdb` and `pentane.pdb` are listed.
 > 4.  Only `cubane.pdb` is listed.
 >
-> > ## Solution
-> > 4 is the correct answer. `*` matches zero or more characters, so any file name starting with
-> > the letter c, followed by zero or more other characters will be matched.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
+> characters before a letter c and zero or more characters after the letter c will be matched.
+> </p>
+> </details>
 >
 > How would the output differ from using this command instead?
 >
@@ -265,10 +269,13 @@ increase the odds that the program won't do what its readers think it does.
 >     from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 > 4.  None of the above.
 >
-> > ## Solution
-> > 1. The text from each file in turn gets written to the `alkanes.pdb` file.
-> > However, the file gets overwritten on each loop interation, so the final content of `alkanes.pdb`
-> > is the text from the `propane.pdb` file.
+> <details><summary>Solution</summary>
+> <p>
+>
+> 1. The text from each file in turn gets written to the `alkanes.pdb` file.
+> However, the file gets overwritten on each loop interation, so the final content of `alkanes.pdb`
+> is the text from the `propane.pdb` file.
+> </details>
 
 > ## Saving to a File in a Loop - Part Two
 >
@@ -289,10 +296,13 @@ increase the odds that the program won't do what its readers think it does.
 > 4.  All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
 >     and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
 >
-> > ## Solution
-> > 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
-> > output from a command.
-> > Given the output from the `cat` command has been redirected, nothing is printed to the screen.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
+> output from a command.
+> Given the output from the `cat` command has been redirected, nothing is printed to the screen.
+> </details>
 
 Let's continue with our example in the `data-shell/creatures` directory.
 Here's a slightly more complicated loop:
@@ -625,17 +635,20 @@ so she decides to get some coffee and catch up on her reading.
 > > done
 > ~~~
 >
-> > ## Solution
-> > The second version is the one we want to run.
-> > This prints to screen everything enclosed in the quote marks, expanding the
-> > loop variable name because we have prefixed it with a dollar sign.
-> >
-> > The first version redirects the output from the command `echo analyze $file` to
-> > a file, `analyzed-$file`. A series of files is generated: `analyzed-cubane.pdb`,
-> > `analyzed-ethane.pdb` etc.
-> >
-> > Try both versions for yourself to see the output! Be sure to open the
-> > `analyzed-*.pdb` files to view their contents.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> The second version is the one we want to run.
+> This prints to screen everything enclosed in the quote marks, expanding the
+> loop variable name because we have prefixed it with a dollar sign.
+>
+> The first version redirects the output from the command `echo analyze $file` to
+> a file, `analyzed-$file`. A series of files is generated: `analyzed-cubane.pdb`,
+> `analyzed-ethane.pdb` etc.
+>
+> Try both versions for yourself to see the output! Be sure to open the
+> `analyzed-*.pdb` files to view their contents.
+> </details>
 
 > ## Nested Loops
 >
@@ -654,9 +667,13 @@ so she decides to get some coffee and catch up on her reading.
 > > done
 > ~~~
 >
-> > ## Solution
-> > We have a nested loop, i.e. contained within another loop, so for each species
-> > in the outer loop, the inner loop (the nested loop) iterates over the list of
-> > temperatures, and creates a new directory for each combination.
-> >
-> > Try running the code for yourself to see which directories are created!
+> <details><summary>Solution</summary>
+> <p>
+> 
+> 
+> We have a nested loop, i.e. contained within another loop, so for each species
+> in the outer loop, the inner loop (the nested loop) iterates over the list of
+> temperatures, and creates a new directory for each combination.
+>
+> Try running the code for yourself to see which directories are created!
+> </details>
