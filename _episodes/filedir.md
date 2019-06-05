@@ -688,6 +688,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 >
 > <details><summary>Solution</summary>
 > <p>
+>
 > 1. No: `.` stands for the current directory.
 > 2. No: `/` stands for the root directory.
 > 3. No: Amanda's home directory is `/Users/amanda`.
