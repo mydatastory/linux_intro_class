@@ -298,18 +298,21 @@ Miscellaneous:
 >
 > An example of such a file is provided in `data-shell/data/animal-counts/animals.txt`
 >
-> > ## Solution
-> >
-> > ```
-> > grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
-> > ```
-> >
-> > You would call the script above like this:
-> >
-> > ```
-> > $ bash count-species.sh bear .
-> > ```
-
+> <details><summary>Solution</summary>
+> <p>
+> 
+>
+> ```
+> grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
+> ```
+>
+> You would call the script above like this:
+>
+> ```
+> $ bash count-species.sh bear .
+> ```
+> </p>
+> </details>
 > ## Little Women
 >
 > You and your friend, having just finished reading *Little Women* by
