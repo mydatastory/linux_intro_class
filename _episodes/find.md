@@ -223,9 +223,13 @@ Miscellaneous:
 > 3. `grep -w "of" haiku.txt`
 > 4. `grep -i "of" haiku.txt`
 >
-> > ## Solution
-> > The correct answer is 3, because the `-w` option looks only for whole-word matches.
-> > The other options will also match "of" when part of another word.
+> <details><summary>Solution</summary>
+> <p>
+>
+> The correct answer is 3, because the `-w` option looks only for whole-word matches.
+> The other options will also match "of" when part of another word.
+> </p>
+> </details>
 
 > ## Wildcards
 >
@@ -324,27 +328,30 @@ Miscellaneous:
 > particular solution is usually chosen based on a combination of
 > yielding the correct result, elegance, readability, and speed.
 >
-> > ## Solutions
-> > ```
-> > for sis in Jo Meg Beth Amy
-> > do
-> > 	echo $sis:
-> >	grep -ow $sis LittleWomen.txt | wc -l
-> > done
-> > ```
-> >
-> > Alternative, slightly inferior solution:
-> > ```
-> > for sis in Jo Meg Beth Amy
-> > do
-> > 	echo $sis:
-> >	grep -ocw $sis LittleWomen.txt
-> > done
-> > ```
-> >
-> > This solution is inferior because `grep -c` only reports the number of lines matched.
-> > The total number of matches reported by this method will be lower if there is more
-> > than one match per line.
+> <details><summary>Solution</summary>
+> <p>
+>
+> ```
+> for sis in Jo Meg Beth Amy
+> do
+> 	echo $sis:
+>	grep -ow $sis LittleWomen.txt | wc -l
+> done
+> ```
+>
+> Alternative, slightly inferior solution:
+> ```
+> for sis in Jo Meg Beth Amy
+> do
+> 	echo $sis:
+>	grep -ocw $sis LittleWomen.txt
+> done
+> ```
+> This solution is inferior because `grep -c` only reports the number of lines matched.
+> The total number of matches reported by this method will be lower if there is more
+> than one match per line.
+> </p>
+> </details>
 
 While `grep` finds lines in files,
 the `find` command finds files themselves. Again, it has a lot of options;
@@ -586,10 +593,14 @@ about them."
 > wc -l $(find . -name '*.dat') | sort -n
 > ~~~
 >
-> > ## Solution
-> > 1. Find all files with a `.dat` extension in the current directory
-> > 2. Count the number of lines each of these files contains
-> > 3. Sort the output from step 2. numerically
+> <details><summary>Solution</summary>
+> <p>
+>
+> 1. Find all files with a `.dat` extension in the current directory
+> 2. Count the number of lines each of these files contains
+> 3. Sort the output from step 2. numerically
+> </p>
+> </details>
 
 > ## Finding Files With Different Properties
 > 
@@ -603,9 +614,13 @@ about them."
 >
 > Hint 2: The value for `-mtime` will need to be negative---why?
 >
-> > ## Solution
-> > Assuming that Nelle’s home is our working directory we type:
-> >
-> > ~~~
-> > $ find ./ -type f -mtime -1 -user ahmed
-> > ~~~
+> <details><summary>Solution</summary>
+> <p>
+> 
+> Assuming that Nelle’s home is our working directory we type:
+>
+> ~~~
+> $ find ./ -type f -mtime -1 -user ahmed
+> ~~~
+> </p>
+> </details>
