@@ -135,8 +135,7 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 > we surround `$1` with double-quotes.
 
 We still need to edit `middle.sh` each time we want to adjust the range of lines,
-though.
-Let's fix that by using the special variables `$2` and `$3` for the
+though. Let's fix that by using the special variables `$2` and `$3` for the
 number of lines to be passed to `head` and `tail` respectively:
 
 ~~~
@@ -267,28 +266,29 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 > Write a shell script called `species.sh` that takes any number of
 > filenames as command-line arguments, and uses and uses a variation of the above command to print a list of the unique species appearing in each of those files separately.
 >
-> > ## Solution
-> >
-> > ```
-> > # Script to find unique species in csv files where species is the second data field
-> > # This script accepts any number of file names as command line arguments
-> >
-> > # Loop over all files
-> > for file in $@ 
-> > do
-> > 	echo "Unique species in $file:"
-> > 	# Extract species names
-> > 	cut -d , -f 2 $file | sort | uniq
-> > done
-> > ```
+> <details><summary>Solution</summary>
+> <p>
+> 
+> ```
+> # Script to find unique species in csv files where species is the second data field
+> # This script accepts any number of file names as command line arguments
+>
+> # Loop over all files
+> for file in $@ 
+> do
+> 	echo "Unique species in $file:"
+> 	# Extract species names
+> 	cut -d , -f 2 $file | sort | uniq
+> done
+> ```
+> </p>
+> </details>
 
 
 Suppose we have just run a series of commands that did something useful --- for example,
-that created a graph we'd like to use in a paper.
-We'd like to be able to re-create the graph later if we need to,
-so we want to save the commands in a file.
-Instead of typing them in again
-(and potentially getting them wrong)
+that created a graph we'd like to use in a paper. We'd like to be able to re-create the 
+graph later if we need to, so we want to save the commands in a file. Instead of typing 
+them in again (and potentially getting them wrong)
 we can do this:
 
 ~~~
@@ -322,11 +322,15 @@ we have a completely accurate record of how we created that figure.
 > running it. In fact, the shell *always* adds commands to the log
 > before running them. Why do you think it does this?
 >
-> > ## Solution
-> > If a command causes something to crash or hang, it might be useful
-> > to know what that command was, in order to investigate the problem.
-> > Were the command only be recorded after running it, we would not
-> > have a record of the last command run in the event of a crash.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> If a command causes something to crash or hang, it might be useful
+> to know what that command was, in order to investigate the problem.
+> Were the command only be recorded after running it, we would not
+> have a record of the last command run in the event of a crash.
+> </p>
+> </details>
 
 In practice, most people develop shell scripts by running commands at the shell prompt a few times
 to make sure they're doing the right thing,
@@ -388,14 +392,12 @@ done
 
 The advantage is that this always selects the right files:
 she doesn't have to remember to exclude the 'Z' files.
-The disadvantage is that it *always* selects just those files --- she can't run it on all files
-(including the 'Z' files),
-or on the 'G' or 'H' files her colleagues in Antarctica are producing,
-without editing the script.
-If she wanted to be more adventurous,
-she could modify her script to check for command-line arguments,
-and use `NENE*[AB].txt` if none were provided.
-Of course, this introduces another tradeoff between flexibility and complexity.
+The disadvantage is that it *always* selects just those files --- she can't run it 
+on all files (including the 'Z' files), or on the 'G' or 'H' files her 
+colleagues in Antarctica are producing, without editing the script. If she 
+wanted to be more adventurous, she could modify her script to check for 
+command-line arguments, and use `NENE*[AB].txt` if none were provided.  Of 
+course, this introduces another tradeoff between flexibility and complexity.
 
 > ## Variables in Shell Scripts
 >
@@ -421,19 +423,23 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > 3. The first and the last line of each file in the `molecules` directory
 > 4. An error because of the quotes around `*.pdb`
 >
-> > ## Solution
-> > The correct answer is 2. 
-> >
-> > The special variables $1, $2 and $3 represent the command line arguments given to the
-> > script, such that the commands run are:
-> >
-> > ```
-> > $ head -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
-> > $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
-> > ```
-> > The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
-> > As such, the first argument to the script is `'*.pdb'` which gets expanded within the
-> > script by `head` and `tail`.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> The correct answer is 2. 
+>
+> The special variables $1, $2 and $3 represent the command line arguments given to the
+> script, such that the commands run are:
+>
+> ```
+> $ head -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
+> $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
+> ```
+> The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
+> As such, the first argument to the script is `'*.pdb'` which gets expanded within the
+> script by `head` and `tail`.
+> </p>
+> </details>
 
 > ## Find the Longest File With a Given Extension
 >
@@ -449,17 +455,20 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > would print the name of the `.pdb` file in `/tmp/data` that has
 > the most lines.
 >
-> > ## Solution
-> >
-> > ```
-> > # Shell script which takes two arguments: 
-> > #    1. a directory name
-> > #    2. a file extension
-> > # and prints the name of the file in that directory
-> > # with the most lines which matches the file extension.
-> > 
-> > wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
-> > ```
+> <details><summary>Solution</summary>
+> <p>
+> 
+> ```
+> # Shell script which takes two arguments: 
+> #    1. a directory name
+> #    2. a file extension
+> # and prints the name of the file in that directory
+> # with the most lines which matches the file extension.
+> 
+> wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
+> ```
+> </p>
+> </details>
 
 > ## Script Reading Comprehension
 >
@@ -487,22 +496,26 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > echo $@.pdb
 > ~~~
 >
-> > ## Solutions
-> > In each case, the shell expands the wildcard in `*.pdb` before passing the resulting
-> > list of file names as arguments to the script.
-> >
-> > Script 1 would print out a list of all files containing a dot in their name.
-> > The arguments passed to the script are not actually used anywhere in the script.
-> >
-> > Script 2 would print the contents of the first 3 files with a `.pdb` file extension.
-> > `$1`, `$2`, and `$3` refer to the first, second, and third argument respectively.
-> > 
-> > Script 3 would print all the arguments to the script (i.e. all the `.pdb` files),
-> > followed by `.pdb`.
-> > `$@` refers to *all* the arguments given to a shell script.
-> > ```
-> > cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
-> > ```
+> <details><summary>Solution</summary>
+> <p>
+> 
+> In each case, the shell expands the wildcard in `*.pdb` before passing the resulting
+> list of file names as arguments to the script.
+>
+> Script 1 would print out a list of all files containing a dot in their name.
+> The arguments passed to the script are not actually used anywhere in the script.
+>
+> Script 2 would print the contents of the first 3 files with a `.pdb` file extension.
+> `$1`, `$2`, and `$3` refer to the first, second, and third argument respectively.
+> 
+> Script 3 would print all the arguments to the script (i.e. all the `.pdb` files),
+> followed by `.pdb`.
+> `$@` refers to *all* the arguments given to a shell script.
+> ```
+> cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
+> ```
+> </p>
+> </details>
 
 > ## Debugging Scripts
 >
@@ -534,9 +547,13 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > What is the output showing you?
 > Which line is responsible for the error?
 >
-> > ## Solution
-> > The `-x` option causes `bash` to run in debug mode.
-> > This prints out each command as it is run, which will help you to locate errors.
-> > In this example, we can see that `echo` isn't printing anything. We have made a typo
-> > in the loop variable name, and the variable `datfile` doesn't exist, hence returning
-> > an empty string.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> The `-x` option causes `bash` to run in debug mode.
+> This prints out each command as it is run, which will help you to locate errors.
+> In this example, we can see that `echo` isn't printing anything. We have made a typo
+> in the loop variable name, and the variable `datfile` doesn't exist, hence returning
+> an empty string.
+> </p>
+> </details>
