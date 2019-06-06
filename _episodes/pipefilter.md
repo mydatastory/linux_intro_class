@@ -278,13 +278,17 @@ the output of `head` must be the file with the fewest lines.
 >
 > Hint: Try executing each command twice in a row and then examining the output files.
 >
-> > ## Solution
-> > In the first example with `>`, the string "hello" is written to `testfile01.txt`,
-> > but the file gets overwritten each time we run the command.
-> >
-> > We see from the second example that the `>>` operator also writes "hello" to a file
-> > (in this case`testfile02.txt`),
-> > but appends the string to the file if it already exists (i.e. when we run it for the second time).
+> <details><summary>Solution</summary>
+> <p>
+> 
+> In the first example with `>`, the string "hello" is written to `testfile01.txt`,
+> but the file gets overwritten each time we run the command.
+>
+> We see from the second example that the `>>` operator also writes "hello" to a file
+> (in this case`testfile02.txt`),
+> but appends the string to the file if it already exists (i.e. when we run it for the second time).
+> </p>
+> </details>
 
 > ## Appending Data
 >
@@ -305,11 +309,15 @@ the output of `head` must be the file with the fewest lines.
 > 3. The first three lines and the last two lines of `animals.txt`
 > 4. The second and third lines of `animals.txt`
 >
-> > ## Solution
-> > Option 3 is correct.
-> > For option 1 to be correct we would only run the `head` command.
-> > For option 2 to be correct we would only run the `tail` command.
-> > For option 4 to be correct we would have to pipe the output of `head` into `tail -n 2` by doing `head -n 3 animals.txt | tail -n 2 > animals-subset.txt`
+> <details><summary>Solution</summary>
+> <p>
+> 
+> Option 3 is correct.
+> For option 1 to be correct we would only run the `head` command.
+> For option 2 to be correct we would only run the `tail` command.
+> For option 4 to be correct we would have to pipe the output of `head` into `tail -n 2` by doing `head -n 3 animals.txt | tail -n 2 > animals-subset.txt`
+> </p>
+> </details>
 
 If you think this is confusing,
 you're in good company:
@@ -365,8 +373,7 @@ $ wc -l *.pdb | sort -n | head -n 1
 
 This is exactly like a mathematician nesting functions like *log(3x)*
 and saying "the log of three times *x*".
-In our case,
-the calculation is "head of sort of line count of `*.pdb`".
+In our case, the calculation is "head of sort of line count of `*.pdb`".
 
 > ## Piping Commands Together
 >
@@ -378,12 +385,16 @@ the calculation is "head of sort of line count of `*.pdb`".
 > 3. `wc -l * | head -n 3 | sort -n`
 > 4. `wc -l * | sort -n | head -n 3`
 >
-> > ## Solution
-> > Option 4 is the solution.
-> > The pipe character `|` is used to feed the standard output from one process to
-> > the standard input of another.
-> > `>` is used to redirect standard output to a file.
-> > Try it in the `data-shell/molecules` directory!
+> <details><summary>Solution</summary>
+> <p>
+> 
+> Option 4 is the solution.
+> The pipe character `|` is used to feed the standard output from one process to
+> the standard input of another.
+> `>` is used to redirect standard output to a file.
+> Try it in the `data-shell/molecules` directory!
+> </p>
+> </details>
 
 Here's what actually happens behind the scenes when we create a pipe.
 When a computer runs a program --- any program --- it creates a **process**
@@ -474,10 +485,14 @@ so that you and other people can put those programs into pipes to multiply their
 > (Hint: think about very large data sets.) What other command could
 > you combine with it in a pipe to remove all duplicated lines?
 >
-> > ## Solution
+> <details><summary>Solution</summary>
+> <p>
+> 
 > > ```
 > > $ sort salmon.txt | uniq
 > > ```
+> </p>
+> </details>
 
 > ## Pipe Reading Comprehension
 >
@@ -539,11 +554,16 @@ so that you and other people can put those programs into pipes to multiply their
 > out what animals the file contains (without any duplicates in their
 > names)?
 >
-> > ## Solution
-> > ```
-> > $ cut -d , -f 2 animals.txt | sort | uniq
-> > ```
-> > {: .language-bash}
+> <details><summary>Solution</summary>
+> <p>
+> 
+> ```
+> $ cut -d , -f 2 animals.txt | sort | uniq
+> ```
+> 
+> </p>
+> </details>
+
 
 > ## Which Pipe?
 >
@@ -568,10 +588,14 @@ so that you and other people can put those programs into pipes to multiply their
 > 5.  `cut -d, -f 2 animals.txt | sort | uniq -c`
 > 6.  `cut -d, -f 2 animals.txt | sort | uniq -c | wc -l`
 >
-> > ## Solution
-> > Option 5. is the correct answer.
-> > If you have difficulty understanding why, try running the commands, or sub-sections of
-> > the pipelines (make sure you are in the `data-shell/data` directory).
+> <details><summary>Solution</summary>
+> <p>
+> 
+> Option 5. is the correct answer.
+> If you have difficulty understanding why, try running the commands, or sub-sections of
+> the pipelines (make sure you are in the `data-shell/data` directory).
+> </p>
+> </details>
 
 ## Nelle's Pipeline: Checking Files
 
@@ -631,10 +655,8 @@ $ wc -l *.txt | sort -n | tail -n 5
 ~~~
 
 Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
-All of her samples should be marked 'A' or 'B';
-by convention,
-her lab uses 'Z' to indicate samples with missing information.
-To find others like it, she does this:
+All of her samples should be marked 'A' or 'B'; by convention, her lab uses 'Z' to 
+indicate samples with missing information.  To find others like it, she does this:
 
 ~~~
 $ ls *Z.txt
@@ -678,16 +700,19 @@ so this matches all the valid data files she has.
 > 3.  Under what circumstances would your new expression produce an error message
 >     where the original one would not?
 >
-> > ## Solution
-> > 1. A solution using two wildcard expressions:
-> >     ~~~
-> >     $ ls *A.txt
-> >     $ ls *B.txt
-> >     ~~~
-> >     {: .language-bash}
-> > 2. The output from the new commands is separated because there are two commands.
-> > 3. When there are no files ending in `A.txt`, or there are no files ending in
-> > `B.txt`.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> 1. A solution using two wildcard expressions:
+>     ~~~
+>     $ ls *A.txt
+>     $ ls *B.txt
+>     ~~~
+> 2. The output from the new commands is separated because there are two commands.
+> 3. When there are no files ending in `A.txt`, or there are no files ending in
+> `B.txt`.
+> </p>
+> </details>
 
 > ## Removing Unneeded Files
 >
@@ -702,11 +727,15 @@ so this matches all the valid data files she has.
 > 3. `rm * .txt`
 > 4. `rm *.*`
 >
-> > ## Solution
-> > 1. This would remove `.txt` files with one-character names
-> > 2. This is correct answer
-> > 3. The shell would expand `*` to match everything in the current directory,
-> > so the command would try to remove all matched files and an additional
-> > file called `.txt`
-> > 4. The shell would expand `*.*` to match all files with any extension,
-> > so this command would delete all files
+> <details><summary>Solution</summary>
+> <p>
+> 
+> 1. This would remove `.txt` files with one-character names
+> 2. This is correct answer
+> 3. The shell would expand `*` to match everything in the current directory,
+> so the command would try to remove all matched files and an additional
+> file called `.txt`
+> 4. The shell would expand `*.*` to match all files with any extension,
+> so this command would delete all files
+> </p>
+> </details>
