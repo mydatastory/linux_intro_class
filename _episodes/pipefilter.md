@@ -103,8 +103,8 @@ or `-c` to get only the number of characters.
 
 Which of these files contains the fewest lines?
 It's an easy question to answer when there are only six files,
-but what if there were 6000?
-Our first step toward a solution is to run the command:
+but what if there were 6000? Our first step toward a solution is 
+to run the command:
 
 ~~~
 $ wc -l *.pdb > lengths.txt
@@ -221,8 +221,8 @@ $ sort -n lengths.txt
 We can put the sorted list of lines in another temporary file called `sorted-lengths.txt`
 by putting `> sorted-lengths.txt` after the command,
 just as we used `> lengths.txt` to put the output of `wc` into `lengths.txt`.
-Once we've done that,
-we can run another command called `head` to get the first few lines in `sorted-lengths.txt`:
+Once we've done that, we can run another command called `head` to get the first few 
+lines in `sorted-lengths.txt`:
 
 ~~~
 $ sort -n lengths.txt > sorted-lengths.txt
@@ -491,9 +491,9 @@ so that you and other people can put those programs into pipes to multiply their
 > <details><summary>Solution</summary>
 > <p>
 > 
-> > ```
-> > $ sort salmon.txt | uniq
-> > ```
+> ```
+> $ sort salmon.txt | uniq
+> ```
 > </p>
 > </details>
 
@@ -720,7 +720,6 @@ so this matches all the valid data files she has.
 > `B.txt`.
 > </p>
 > </details>
-
 > ## Removing Unneeded Files
 >
 > Suppose you want to delete your processed data files, and only keep
