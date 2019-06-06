@@ -534,6 +534,7 @@ so that you and other people can put those programs into pipes to multiply their
 > ```
 > </p>
 > </details>
+>
 > ## Pipe Construction
 >
 > For the file `animals.txt` from the previous exercise, consider the following command:
@@ -720,6 +721,7 @@ so this matches all the valid data files she has.
 > `B.txt`.
 > </p>
 > </details>
+>
 > ## Removing Unneeded Files
 >
 > Suppose you want to delete your processed data files, and only keep
