@@ -192,8 +192,12 @@ Now let's use the `sort` command to sort its contents.
 >
 > Explain why `-n` has this effect.
 >
-> > ## Solution
-> > The `-n` option specifies a numerical rather than an alphanumerical sort.
+> <details><summary>Solution</summary>
+> <p>
+> 
+> The `-n` option specifies a numerical rather than an alphanumerical sort.
+> </p>
+> </details>
 
 We will also use the `-n` option to specify that the sort is
 numerical instead of alphanumerical.
@@ -231,8 +235,7 @@ $ head -n 1 sorted-lengths.txt
 
 Using `-n 1` with `head` tells it that
 we only want the first line of the file;
-`-n 20` would get the first 20,
-and so on.
+`-n 20` would get the first 20, and so on.
 Since `sorted-lengths.txt` contains the lengths of our files ordered from least to greatest,
 the output of `head` must be the file with the fewest lines.
 
@@ -515,18 +518,22 @@ so that you and other people can put those programs into pipes to multiply their
 > $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 > ~~~
 > Hint: build the pipeline up one command at a time to test your understanding
-> > ## Solution
-> > The `head` command extracts the first 5 lines from `animals.txt`.
-> > Then, the last 3 lines are extracted from the previous 5 by using the `tail` command.
-> > With the `sort -r` command those 3 lines are sorted in reverse order and finally,
-> > the output is redirected to a file `final.txt`.
-> > The content of this file can be checked by executing `cat final.txt`.
-> > The file should contain the following lines:
-> > ```
-> > 2012-11-06,rabbit
-> > 2012-11-06,deer
-> > 2012-11-05,raccoon
-> > ```
+> <details><summary>Solution</summary>
+> <p>
+> 
+> The `head` command extracts the first 5 lines from `animals.txt`.
+> Then, the last 3 lines are extracted from the previous 5 by using the `tail` command.
+> With the `sort -r` command those 3 lines are sorted in reverse order and finally,
+> the output is redirected to a file `final.txt`.
+> The content of this file can be checked by executing `cat final.txt`.
+> The file should contain the following lines:
+> ```
+> 2012-11-06,rabbit
+> 2012-11-06,deer
+> 2012-11-05,raccoon
+> ```
+> </p>
+> </details>
 > ## Pipe Construction
 >
 > For the file `animals.txt` from the previous exercise, consider the following command:
